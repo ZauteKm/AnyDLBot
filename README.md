@@ -16,4 +16,4 @@
 
 ### Developers:
 
-- <a href="https://telegram.dog/ZauteKm"><img src="https://img.shields.io/badge/Telegram-Link-blue.svg?logo=telegram"></a>
+- <a href="https://telegram.dog/ZauteKm"><img src="https://img.shields.io/badge/Zaute-Km-blue.svg?logo=telegram"></a>
