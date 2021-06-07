@@ -26,7 +26,7 @@ s2tw = OpenCC('s2tw.json').convert
 @InFoJosTel.on_message(filters.command("start"))
 async def start(client, message):
    if message.chat.type == 'private':
-       await Jebot.send_message(
+       await InFoJosTel.send_message(
                chat_id=message.chat.id,
                text="""<b>Hey There, I'm AnyDLBot
 I can download video or audio from Youtube, Pornhub and Xhamster. \n\nMade by @ZauteKm.
@@ -51,7 +51,7 @@ Hit help button to find out more about how to use me</b>""",
 @InFoJosTel.on_message(filters.command("help"))
 async def help(client, message):
     if message.chat.type == 'private':   
-        await Jebot.send_message(
+        await InFoJosTel.send_message(
                chat_id=message.chat.id,
                text="""<b><u>AnyDLBot Help!</u></b>
 Just send a Youtube, Pornhub or Xhamster video url to download it in video or audio format!
@@ -76,7 +76,7 @@ Just send a Youtube, Pornhub or Xhamster video url to download it in video or au
 @InFoJosTel.on_message(filters.command("about"))
 async def about(client, message):
     if message.chat.type == 'private':   
-        await Jebot.send_message(
+        await InFoJosTel.send_message(
                chat_id=message.chat.id,
                text="""<b><u>About AnyDLBot!</u></b>
 <b>▷ Developer:</b> <a href="https://t.me/ZauteKm">Zaute Km</a>
