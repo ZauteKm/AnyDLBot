@@ -326,4 +326,4 @@ Bot Started!
 """
 )
 
-infojostel.run()
+InFoJosTel.run()
