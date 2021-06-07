@@ -12,8 +12,8 @@
 
 ### Credits
 
-- [Pyrogram](https://github.com/pyrogram/pyrogram)
+- [<img src="https://telegra.ph/file/804f06d1590f7619a63ed.jpg" width="100" height="40">](https://github.com/pyrogram/pyrogram)
 
 ### Developers:
 
-- [@ZauteKm](https://t.me/ZauteKm)
+- <a href="https://telegram.dog/ZauteKm"><img src="https://img.shields.io/badge/Telegram-Link-blue.svg?logo=telegram"></a>
