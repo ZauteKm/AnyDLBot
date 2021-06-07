@@ -1,0 +1,51 @@
+{
+    "name": "AnyDLBot",
+    "description": "A bot that can download video or audio from video websites.",
+    "logo": "https://telegra.ph/file/0bd034087808b90e6ab48.jpg",
+    "keywords": [
+        "AnyDL",
+        "Video Downloader",
+        "Telegram Bot",
+        "InFoJosTel"
+    ],
+    "website": "https://telegram.dog/ZauteKm",
+    "repository": "https://github.com/InFoJosTel/AnyDLBot",
+    "success_url": "https://telegram.me/InFoJosTel",
+    "env": {
+        "TG_BOT_TOKEN": {
+            "description": "Your Telegram Bot Token from @BotFather",
+            "value": ""
+        },
+        "API_HASH": {
+            "description": "Your API Hash from my.telegram.org",
+            "value": ""
+        },
+        "APP_ID": {
+            "description": "Your APP ID from my.telegram.org",
+            "value": ""
+        },
+        "AUDIO_THUMBNAIL": {
+            "description": "If you need to use custom thumbnail for audio files, get telegraph url of your thumbnail and put here. If not keep No",
+            "value": "No"
+        },
+        "VIDEO_THUMBNAIL": {
+            "description": "If you need to use custom thumbnail for video files, get telegraph url of your thumbnail and put it here. If not keep No",
+            "value": "No"
+        }
+    },
+    "addons": [],
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        },
+        {
+            "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+        }
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}
