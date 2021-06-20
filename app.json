@@ -9,8 +9,8 @@
         "InFoJosTel"
     ],
     "website": "https://telegram.dog/ZauteKm",
-    "repository": "https://github.com/InFoJosTel/AnyDLBot",
-    "success_url": "https://telegram.me/InFoJosTel",
+    "repository": "https://github.com/ZauteKm/AnyDLBot",
+    "success_url": "https://t.me/iZaute/6",
     "env": {
         "TG_BOT_TOKEN": {
             "description": "Your Telegram Bot Token from @BotFather",
