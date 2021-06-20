@@ -2,9 +2,9 @@
 - This bot can download video or audio from youtube quickly (custom thumbnail support)
 
 <a href="https://telegram.dog/AnyDLzKBot"><img src="https://img.shields.io/badge/Telegram-Bot-blue.svg?logo=telegram"></a>
-[![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes/yellow?icon=github)](https://github.com/InFoJosTel/AnyDLBot)
+[![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes/yellow?icon=github)](https://github.com/ZauteKm/AnyDLBot)
 [![Ask Me Anything !](https://img.shields.io/badge/🤔%20Ask%20me-anything-1abc9c.svg)](https://telegram.dog/ZauteBot)
-[![Report Bugs!](https://badgen.net/badge/👥%20Report%20/Bugs/red)](https://telegram.dog/InFoJosTelGroup)
+[![Report Bugs!](https://badgen.net/badge/👥%20Report%20/Bugs/red)](https://t.me/iZaute/5)
 
 ## Config Vars 🤖
 
@@ -17,7 +17,7 @@
 ### Deploy to Heroku 😎
 Press the button Deploy to heroku and give the values for the config vars. 👇
 
-[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/InFoJosTel/AnyDLBot)
+[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ZauteKm/AnyDLBot)
 
 ### Credits
 
@@ -25,4 +25,4 @@ Press the button Deploy to heroku and give the values for the config vars. 👇
 
 ### Developers:
 
-- <a href="https://telegram.dog/ZauteKm"><img src="https://img.shields.io/badge/Zaute-Km-blue.svg?logo=telegram"></a>
+- <a href="https://t.me/iZaute/6"><img src="https://img.shields.io/badge/Zaute-Km-blue.svg?logo=telegram"></a>
