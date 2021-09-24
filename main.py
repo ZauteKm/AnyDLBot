@@ -1,6 +1,21 @@
+#!/usr/bin/env python3
+# Copyright (C) @ZauteKm
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+
+# You should have received a copy of the GNU Affero General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
 import os
 import asyncio
 from urllib.parse import urlparse
+from pyrogram.errors import UserNotParticipant, UserBannedInChannel
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from youtube_dl import YoutubeDL
@@ -8,8 +23,8 @@ from opencc import OpenCC
 from config import Config
 import wget
 
-InFoJosTel = Client(
-   "YT Downloader",
+ZauteKm = Client(
+   "AnyDL Bot",
    api_id=Config.APP_ID,
    api_hash=Config.API_HASH,
    bot_token=Config.TG_BOT_TOKEN,
@@ -23,12 +38,13 @@ YTDL_REGEX = (r"^((?:https?:)?\/\/)"
 s2tw = OpenCC('s2tw.json').convert
 
 
-@InFoJosTel.on_message(filters.command("start"))
+@ZauteKm.on_message(filters.command("start"))
 async def start(client, message):
    if message.chat.type == 'private':
-       await InFoJosTel.send_message(
+       await ZauteKm.send_message(
                chat_id=message.chat.id,
                text="""<b>Hey There, I'm AnyDLBot
+
 I can download video or audio from Youtube, Pornhub and Xhamster. \n\nMade by @ZauteKm.
 
 Hit help button to find out more about how to use me</b>""",   
@@ -36,26 +52,28 @@ Hit help button to find out more about how to use me</b>""",
                                 [
                                 [
                                         InlineKeyboardButton('🙆🏻‍♂️ Help', callback_data="help"),
-                                        InlineKeyboardButton('Feedback 👥', url='https://telegram.me/InFoJosTelGroup')
+                                        InlineKeyboardButton('Feedback 👥', url='https://telegram.me/zautebot')
                                     ],[
-                                        InlineKeyboardButton('👨‍🎤 Music', url='https://t.me/tgVCSets'),
-                                        InlineKeyboardButton('🤖 Bot Lists', url='https://t.me/TG_BotList/37'),
-                                        InlineKeyboardButton('Source 📢', url='https://t.me/InFoJosTel/110')
+                                        InlineKeyboardButton('🧑‍🔧 Owner', url='https://t.me/ZauteKm'),
+                                        InlineKeyboardButton('🤖 Bot Lists', url='https://t.me/BotzListBot'),
+                                        InlineKeyboardButton('Channel 📢', url='https://t.me/TGBotsProJect')
                                     ],[
-                                        InlineKeyboardButton('🔻 Subscribe Now YouTube 🔻', url='https://youtube.com/playlist?list=PLzkiTywVmsSfmhaDdWNZ5PRmmMKGTIxPJ'),
+                                        InlineKeyboardButton('🔻 Source Code -GitHub🔻', url='https://github.com/ZauteKm/AnyDLBot'),
                                     ]]
                             ),        
             disable_web_page_preview=True,        
             parse_mode="html")
 
-@InFoJosTel.on_message(filters.command("help"))
+@ZauteKm.on_message(filters.command("help"))
 async def help(client, message):
     if message.chat.type == 'private':   
-        await InFoJosTel.send_message(
+        await ZauteKm.send_message(
                chat_id=message.chat.id,
                text="""<b><u>AnyDLBot Help!</u></b>
+
 Just send a Youtube, Pornhub or Xhamster video url to download it in video or audio format!
-<b>▷Join :</b> <a href="https://t.me/InFoJosTel/110">@InFoJosTel</a>""",
+
+<b>▷ Please Join :</b> @TGBotsProJect""",
         reply_markup=InlineKeyboardMarkup(
                                 [[
                                         InlineKeyboardButton(
@@ -63,25 +81,30 @@ Just send a Youtube, Pornhub or Xhamster video url to download it in video or au
                                         InlineKeyboardButton(
                                             "About 🙄", callback_data="about"),
                                   ],[
-                                        InlineKeyboardButton("👨‍🎤 Music", url="https://t.me/tgVCSets"),
-                                        InlineKeyboardButton("🤖 Bot Lists", url="https://t.me/TG_BotList/37"),
-                                        InlineKeyboardButton('Source 📢', url="https://t.me/InFoJosTel/110")
+                                        InlineKeyboardButton("🧑‍🔧 Owner", url="https://t.me/ZauteKm"),
+                                        InlineKeyboardButton("🤖 Bot Lists", url="https://t.me/BotzListBot"),
+                                        InlineKeyboardButton('Channel 📢', url="https://t.me/TGBotsProJect")
                                     ],[
-                                        InlineKeyboardButton("🔻 Subscribe Now YouTube 🔻", url="https://youtube.com/playlist?list=PLzkiTywVmsSfmhaDdWNZ5PRmmMKGTIxPJ"),
+                                        InlineKeyboardButton("🔻 Source Code -GitHub🔻", url="https://github.com/ZauteKm/AnyDLBot"),
                                     ]]
                             ),        
             disable_web_page_preview=True,        
             parse_mode="html")
 
-@InFoJosTel.on_message(filters.command("about"))
+@ZauteKm.on_message(filters.command("about"))
 async def about(client, message):
     if message.chat.type == 'private':   
-        await InFoJosTel.send_message(
+        await ZauteKm.send_message(
                chat_id=message.chat.id,
                text="""<b><u>About AnyDLBot!</u></b>
-<b>▷ Developer:</b> <a href="https://t.me/ZauteKm">Zaute Km</a>
-<b>▷ Library:</b> <a href="https://github.com/pyrogram/pyrogram">Pyrogram</a>
-<b>▷Join :</b> <a href="https://t.me/InFoJosTel/110">@InFoJosTel</a>""",
+
+<b>▷ 🧑‍🔧 Developer:</b> <a href="https://t.me/ZauteKm">Zaute Km</a>
+
+<b>▷ 📚 Library:</b> <a href="https://github.com/pyrogram/pyrogram">Pyrogram</a>
+
+<b>▷ 📢 Channel:</b> @TGBotsProJect
+
+<b>▷ 🌀 Source Code:</b> <a href="https://github.com/ZauteKm/AnyDLBot">GitHub</a>""",
      reply_markup=InlineKeyboardMarkup(
                                 [[
                                         InlineKeyboardButton(
@@ -89,11 +112,11 @@ async def about(client, message):
                                         InlineKeyboardButton(
                                             "Credit ❤️", url="https://t.me/ZauteBot"),
                                   ],[
-                                        InlineKeyboardButton("👨‍🎤 Music", url="https://t.me/tgVCSets"),
-                                        InlineKeyboardButton("🤖 Bot Lists", url="https://t.me/TG_BotList/37"),
-                                        InlineKeyboardButton('Source 📢', url="https://t.me/InFoJosTel/110")
+                                        InlineKeyboardButton("🧑‍🔧 Onwer", url="https://t.me/ZauteKm"),
+                                        InlineKeyboardButton("🤖 Bot Lists", url="https://t.me/BotzListBot"),
+                                        InlineKeyboardButton('Channel 📢', url="https://t.me/TGBotsProJect")
                                     ],[
-                                        InlineKeyboardButton("🔻 Subscribe Now YouTube 🔻", url="https://youtube.com/playlist?list=PLzkiTywVmsSfmhaDdWNZ5PRmmMKGTIxPJ"),
+                                        InlineKeyboardButton("🔻 Source Code -GitHub 🔻", url="https://github.com/ZauteKm/AnyDLBot"),
                                     ]]
                             ),        
             disable_web_page_preview=True,        
@@ -102,11 +125,43 @@ async def about(client, message):
 
 # https://docs.pyrogram.org/start/examples/bot_keyboards
 # Reply with inline keyboard
-@InFoJosTel.on_message(filters.private
+@ZauteKm.on_message(filters.private
                    & filters.text
                    & ~filters.edited
                    & filters.regex(YTDL_REGEX))
-async def ytdl_with_button(_, message: Message):
+async def ytdl_with_button(c: Client, message: Message):
+    if Config.UPDATES_CHANNEL is not None:
+        try:
+            user = await c.get_chat_member(Config.UPDATES_CHANNEL, message.chat.id)
+            if user.status == "kicked":
+                await c.send_message(
+                    chat_id=message.chat.id,
+                    text="Sorry, You are Banned to use me. Contact my [master](https://t.me/ZauteBot).",
+                    parse_mode="markdown",
+                    disable_web_page_preview=True
+                )
+                return
+        except UserNotParticipant:
+            await c.send_message(
+                chat_id=message.chat.id,
+                text="**Please Join My Updates Channel to use me 😉**",
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton("Join Updates Channel", url=f"https://t.me/{Config.UPDATES_CHANNEL}")
+                        ]
+                    ]
+                ),
+                parse_mode="markdown"
+            )
+            return
+        except Exception:
+            await c.send_message(
+                chat_id=message.chat.id,
+                text="Something went Wrong. Contact my [master](https://t.me/zautebot).",
+                parse_mode="markdown",
+                disable_web_page_preview=True)
+            return
     await message.reply_text(
         "**Choose Download type👇**",
         reply_markup=InlineKeyboardMarkup(
@@ -127,7 +182,7 @@ async def ytdl_with_button(_, message: Message):
     )
 
 
-@InFoJosTel.on_callback_query(filters.regex("^ytdl_audio$"))
+@ZauteKm.on_callback_query(filters.regex("^ytdl_audio$"))
 async def callback_query_ytdl_audio(_, callback_query):
     try:
         url = callback_query.message.reply_to_message.text
@@ -205,7 +260,7 @@ else:
        os.remove(audio_file)
        os.remove(thumbnail_file)
 
-@InFoJosTel.on_callback_query(filters.regex("^ytdl_video$"))
+@ZauteKm.on_callback_query(filters.regex("^ytdl_video$"))
 async def callback_query_ytdl_video(_, callback_query):
     try:
         # url = callback_query.message.text
@@ -306,7 +361,7 @@ def get_resolution(info_dict):
     return (width, height)
 
 
-@InFoJosTel.on_callback_query()
+@ZauteKm.on_callback_query()
 async def button(bot, update):
       cb_data = update.data
       if "help" in cb_data:
@@ -322,8 +377,8 @@ async def button(bot, update):
 print(
     """
 Bot Started!
-(C) @ZauteKm
+Join @TGBotsProJect
 """
 )
 
-InFoJosTel.run()
+ZauteKm.run()
