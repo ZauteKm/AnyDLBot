@@ -1,7 +1,7 @@
 # AnyDLBot
 - This bot can download video or audio from youtube quickly (custom thumbnail support)
 
-<a href="https://telegram.dog/AnyDLzKBot"><img src="https://img.shields.io/badge/Telegram-Bot-blue.svg?logo=telegram"></a>
+<a href="https://telegram.dog/AnyDLtgBot"><img src="https://img.shields.io/badge/Telegram-Bot-blue.svg?logo=telegram"></a>
 [![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes/yellow?icon=github)](https://github.com/ZauteKm/AnyDLBot)
 [![Ask Me Anything !](https://img.shields.io/badge/🤔%20Ask%20me-anything-1abc9c.svg)](https://telegram.dog/ZauteBot)
 [![Report Bugs!](https://badgen.net/badge/👥%20Report%20/Bugs/red)](https://t.me/iZaute/5)
