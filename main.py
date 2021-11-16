@@ -126,6 +126,7 @@ async def about(client, message):
 # https://docs.pyrogram.org/start/examples/bot_keyboards
 # Reply with inline keyboard
 @ZauteKm.on_message(filters.private
+                   & filters.group
                    & filters.text
                    & ~filters.edited
                    & filters.regex(YTDL_REGEX))
