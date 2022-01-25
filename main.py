@@ -32,7 +32,7 @@ ZauteKm = Client(
 
 YTDL_REGEX = (r"^((?:https?:)?\/\/)"
               r"?((?:www|m)\.)"
-              r"?((?:youtube\.com|youtu\.be|xvideos\.com|pornhub\.com"
+              r"?((?:youtube\.com|youtu\.be"
               r"|xhamster\.com|xnxx\.com))"
               r"(\/)([-a-zA-Z0-9()@:%_\+.~#?&//=]*)([\w\-]+)(\S+)?$")
 s2tw = OpenCC('s2tw.json').convert
@@ -52,13 +52,12 @@ Hit help button to find out more about how to use me</b>""",
                                 [
                                 [
                                         InlineKeyboardButton('🙆🏻‍♂️ Help', callback_data="help"),
-                                        InlineKeyboardButton('Feedback 👥', url='https://telegram.me/zautebot')
+                                        InlineKeyboardButton('Feedback 👥', url='https://t.me/Md_MHO')
                                     ],[
-                                        InlineKeyboardButton('🧑‍🔧 Owner', url='https://t.me/ZauteKm'),
-                                        InlineKeyboardButton('🤖 Bot Lists', url='https://t.me/BotzList'),
-                                        InlineKeyboardButton('Channel 📢', url='https://t.me/JosProjects')
+                                        InlineKeyboardButton('🧑‍🔧 Owner', url='https://t.me/Md_MHO'),
+                                        
                                     ],[
-                                        InlineKeyboardButton('🔻 Source Code -GitHub🔻', url='https://github.com/ZauteKm/AnyDLBot'),
+                                       
                                     ]]
                             ),        
             disable_web_page_preview=True,        
@@ -81,11 +80,10 @@ Just send a Youtube, Pornhub or Xhamster video url to download it in video or au
                                         InlineKeyboardButton(
                                             "About 🙄", callback_data="about"),
                                   ],[
-                                        InlineKeyboardButton("🧑‍🔧 Owner", url="https://t.me/ZauteKm"),
-                                        InlineKeyboardButton("🤖 Bot Lists", url="https://t.me/BotzList"),
-                                        InlineKeyboardButton('Channel 📢', url="https://t.me/JosProjects")
+                                        InlineKeyboardButton("🧑‍🔧 Owner", url="https://t.me/Md_MHO"),
+                                       
                                     ],[
-                                        InlineKeyboardButton("🔻 Source Code -GitHub🔻", url="https://github.com/ZauteKm/AnyDLBot"),
+                                      
                                     ]]
                             ),        
             disable_web_page_preview=True,        
@@ -112,11 +110,10 @@ async def about(client, message):
                                         InlineKeyboardButton(
                                             "Credit ❤️", url="https://t.me/ZauteBot"),
                                   ],[
-                                        InlineKeyboardButton("🧑‍🔧 Owner", url="https://t.me/ZauteKm"),
-                                        InlineKeyboardButton("🤖 Bot Lists", url="https://t.me/BotzList"),
-                                        InlineKeyboardButton('Channel 📢', url="https://t.me/JosProjects")
+                                        InlineKeyboardButton("🧑‍🔧 Owner", url="https://t.me/Md_MHO"),
+                                       
                                     ],[
-                                        InlineKeyboardButton("🔻 Source Code -GitHub 🔻", url="https://github.com/ZauteKm/AnyDLBot"),
+                                       
                                     ]]
                             ),        
             disable_web_page_preview=True,        
@@ -158,7 +155,7 @@ async def ytdl_with_button(c: Client, message: Message):
         except Exception:
             await c.send_message(
                 chat_id=message.chat.id,
-                text="Something went Wrong. Contact my [master](https://t.me/zautebot).",
+                text="Something went Wrong. Contact my [master](https://t.me/Md_MHO).",
                 parse_mode="markdown",
                 disable_web_page_preview=True)
             return
